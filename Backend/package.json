@@ -11,6 +11,7 @@
     "start": "node src/index.js"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.3",
     "cookieparser": "^0.1.0",
     "cors": "^2.8.6",
     "express": "^5.2.1",
