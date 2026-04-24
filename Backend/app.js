@@ -1,5 +1,6 @@
 import express from "express";
 import { errorHandler } from "./src/middleware/errorhandler.middleware";
+import { healthCheck } from "./src/controllers/healthcheck.controller";
 
 const app = express();
 
@@ -18,6 +19,13 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   }),
 );
+
+
+//import routes
+import {healthCheck} from "./src/controllers/healthcheck.controller.js"
+app.use("/api/v1/healthcheck", healthCheck);
+
+
 app.get("/", (req, res) => {
   res.send("hellow");
 });
