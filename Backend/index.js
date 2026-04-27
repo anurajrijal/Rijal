@@ -3,12 +3,10 @@ import dotenv from "dotenv";
 import connectDB from "./src/database/db.js";
 import app from "./app.js";
 
-
 dotenv.config({
-  path: "./env",
+  path: "./.env",
 });
 
-const app = express();
 const port = process.env.PORT || 8000;
 
 connectDB()

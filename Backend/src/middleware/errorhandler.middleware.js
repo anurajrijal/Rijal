@@ -17,4 +17,4 @@ const errorHandler = (err, req, res, next) => {
       .json({ success: false, messgae: err.messgae || "Server Error" });
   }
 };
-export { errorHandler };
+export default errorHandler;

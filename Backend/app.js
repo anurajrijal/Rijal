@@ -1,6 +1,7 @@
 import express from "express";
-import { errorHandler } from "./src/middleware/errorhandler.middleware";
-import { healthCheck } from "./src/controllers/healthcheck.controller";
+import errorHandler from "./src/middleware/errorhandler.middleware.js";
+import cookieParser from "cookie-parser";
+import cors from "cors";
 
 const app = express();
 
@@ -20,11 +21,9 @@ app.use(
   }),
 );
 
-
 //import routes
-import {healthCheck} from "./src/controllers/healthcheck.controller.js"
+import { healthCheck } from "./src/controllers/healthcheck.controller.js";
 app.use("/api/v1/healthcheck", healthCheck);
-
 
 app.get("/", (req, res) => {
   res.send("hellow");
